@@ -237,7 +237,7 @@ function renderReviews() {
 
                 <div class="app-footer-action">
                     <a href="${app.link}" target="_blank" rel="noopener noreferrer" class="btn-read-review">
-                        Kunjungi Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Visit <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
             </div>
