@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dzaky</title>
+    <meta
+      name="description"
+      content="Personal space by Dzaky. Sharing Gundam hobbies, tech exploring, software reviews, reflections, and stories."
+    />
+    <!-- Google Fonts: Cormorant Garamond (Serif Aesthetic) + Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- TOP NAVBAR (OVER HERO) -->
+    <header class="navbar-wrapper" id="navbarWrapper">
+      <nav class="navbar">
+        <a href="#home" class="nav-logo">Dzaky</a>
+
+        <!-- Desktop Nav Menu -->
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#reviews" class="nav-link">Software Review</a></li>
+            <li><a href="#blog" class="nav-link">Blog</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <!-- Audio quick toggle in navbar -->
+            <button
+              class="nav-icon-btn"
+              id="navbarAudioToggle"
+              title="Putar Musik Santai"
+            >
+              <i class="fa-solid fa-music"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Buka Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-logo">Dzaky</span>
+        <button
+          class="sidebar-close-btn"
+          id="sidebarCloseBtn"
+          aria-label="Tutup Menu"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="sidebar-links">
+        <li><a href="#home" class="sidebar-link active">Home</a></li>
+        <li><a href="#about" class="sidebar-link">About</a></li>
+        <li><a href="#reviews" class="sidebar-link">Software Review</a></li>
+        <li><a href="#blog" class="sidebar-link">Blog</a></li>
+        <li><a href="#contact" class="sidebar-link">Contact</a></li>
+      </ul>
+      <div class="sidebar-actions">
+        <button
+          class="nav-icon-btn sidebar-icon-btn"
+          id="sidebarMusicBtn"
+          title="Musik"
+        >
+          <i class="fa-solid fa-music"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Sidebar backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <main>
+      <!-- HERO SECTION (MATCHING SCREENSHOT WITH PRAU VIA PATAK BANTENG) -->
+      <section id="home" class="hero-section">
+        <div class="hero-bg-image">
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-text-container">
+          <h1 class="hero-main-title">DZAKY</h1>
+          <p class="hero-subtitle">GUNDAM &amp; CREATIVE EXPLORER</p>
+          <div class="hero-meta-badge">
+            <span>Gunpla</span>
+            <span class="dot">•</span>
+            <span>Tech Explorer</span>
+            <span class="dot">•</span>
+            <span>Hobby</span>
+          </div>
+        </div>
+
+        <a
+          href="#quote-section"
+          class="hero-scroll-down"
+          aria-label="Gulir ke bawah"
+        >
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+      </section>
+
+      <!-- QUOTE & REFLECTIONS SECTION -->
+      <section id="quote-section" class="quote-section">
+        <div class="container quote-container">
+          <div class="quote-block single-quote">
+            <div class="quote-lang-divider">
+              <span>---------- WORDS ----------</span>
+            </div>
+            <blockquote class="quote-text quote-main">
+              "Always do good, whenever and wherever"
+            </blockquote>
+            <span class="quote-author">~Me</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION: HOBBY, MOUNTAINS, TECH & FOR FUN -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">About</span>
+          </div>
+
+          <!-- Personal Bio Box -->
+          <div class="personal-bio-box">
+            <div class="bio-avatar-col">
+              <div class="bio-avatar-frame">
+                <img
+                  src="images/profil.jpeg"
+                  alt="Dzaky Profile"
+                  class="bio-avatar-img"
+                />
+              </div>
+            </div>
+            <div class="bio-info-col">
+              <span class="bio-greeting">Hi, I'm Dzaky.</span>
+              <p>
+                I live in Surakarta and am a student at FIKOM UDB Surakarta with
+                a passion for design, web development, and all things
+                tech-related. My hobbies include listening to music, drawing,
+                watching movies and anime, creating anime GFX designs, and
+                building Gundam models.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-photos-grid">
+            <div
+              class="about-photo-item"
+              onclick="openLightbox('images/P1.jpeg')"
+            >
+              <img src="images/P1.jpeg" alt="Photo 1" />
+              <div class="photo-zoom-icon">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+            <div
+              class="about-photo-item"
+              onclick="openLightbox('images/P2.jpeg')"
+            >
+              <img src="images/P2.jpeg" alt="Photo 2" />
+              <div class="photo-zoom-icon">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+            <div
+              class="about-photo-item"
+              onclick="openLightbox('images/P3.jpeg')"
+            >
+              <img src="images/P3.jpeg" alt="Photo 3" />
+              <div class="photo-zoom-icon">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+            <div
+              class="about-photo-item"
+              onclick="openLightbox('images/P4.jpeg')"
+            >
+              <img src="images/P4.jpeg" alt="Photo 4" />
+              <div class="photo-zoom-icon">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+            <div
+              class="about-photo-item"
+              onclick="openLightbox('images/P5.jpeg')"
+            >
+              <img src="images/P5.jpeg" alt="Photo 5" />
+              <div class="photo-zoom-icon">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+            <div
+              class="about-photo-item"
+              onclick="openLightbox('images/P6.jpeg')"
+            >
+              <img src="images/P6.jpeg" alt="Photo 6" />
+              <div class="photo-zoom-icon">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- LIGHTBOX MODAL -->
+          <div
+            id="lightbox-modal"
+            class="lightbox-overlay"
+            onclick="closeLightbox()"
+          >
+            <button class="lightbox-close" onclick="closeLightbox()">
+              &times;
+            </button>
+            <img
+              id="lightbox-img"
+              src=""
+              alt="Preview"
+              onclick="event.stopPropagation()"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- SOFTWARE REVIEW SECTION (HOBBY, OUTDOOR & EVERYDAY APPS) -->
+      <section id="reviews" class="reviews-section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Software Review</span>
+          </div>
+
+          <!-- Reviews Grid -->
+          <div class="reviews-grid" id="reviewsGrid">
+            <!-- Cards will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG SECTION (TRAVEL STORIES & HIKING MEMORIES) -->
+      <section id="blog" class="blog-section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Blog</span>
+            <h2 class="section-title">Documentation</h2>
+            <p class="section-subtitle">The drama A Midsummer Night's Dream</p>
+          </div>
+
+          <div class="about-photos-grid blog-photos-grid">
+            <div class="about-photo-item blog-photo-item">
+              <img src="images/D1.jpeg" alt="Documentation 1" />
+            </div>
+            <div class="about-photo-item blog-photo-item">
+              <img src="images/D2.jpeg" alt="Documentation 2" />
+            </div>
+            <div class="about-photo-item blog-photo-item">
+              <img src="images/D3.jpeg" alt="Documentation 3" />
+            </div>
+          </div>
+
+          <!-- DRAMA STORY & REFLECTION -->
+          <div class="drama-story-box">
+            <div class="drama-intro-card">
+              <p>
+                The drama <em>A Midsummer Night's Dream</em> tells a story about
+                love, friendship, and magic. This story is about four young
+                people. Two young people fall in love with the wrong person
+                because of magic. The four young people are Hermia, Lysander,
+                Demetrius, and Helena.
+              </p>
+            </div>
+
+            <div class="drama-highlights-grid">
+              <div class="drama-highlight-card">
+                <h3 class="drama-section-heading">
+                  <i class="fa-solid fa-heart"></i> MY FAVORITE CHARACTER
+                </h3>
+                <p>
+                  Among the entire cast of characters in this stage play, the
+                  character that intrigues me the most is Oberon, the King of
+                  the Fairies. Oberon fascinates me because of his
+                  multi-dimensional personality as well as his dual character
+                  because he is an authoritative and proud king who, at times,
+                  is manipulative and vengeful but, in reality, has a heart that
+                  is benevolent. While Oberon is initially jealous of Titania
+                  and uses the magical flower to take revenge on her for this
+                  reason, he expresses pity when he learns that Demetrius is
+                  being mean to Helena and directs Puck to make the young man’s
+                  heart feel better. Once he achieves his objective, Oberon
+                  behaves magnanimously by removing the spell from Titania and
+                  ensuring that all the mortal lovers unite into happy pairs.
+                </p>
+              </div>
+
+              <div class="drama-highlight-card">
+                <h3 class="drama-section-heading">
+                  <i class="fa-solid fa-film"></i> MY FAVORITE SCENE
+                </h3>
+                <p>
+                  The best scene of the entire show in my opinion is Act 2,
+                  Scene 1, when Oberon stealthily hides in the woods to listen
+                  to the quarrel that Demetrius and Helena have. When Demetrius
+                  rejects Helena in such an unfriendly way, Oberon observes the
+                  entire scene with sympathy towards Helena's plight. The reason
+                  why I find this scene so intriguing is because it shows
+                  Oberon's sympathetic side even though he is a regal character.
+                  The spontaneous idea of Oberon to act upon the situation by
+                  using the magic potion on Demetrius is the start of the main
+                  romantic entanglements in the play.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Contact</span>
+          </div>
+
+            <!-- Socials & Quote Box -->
+            <div class="contact-social-box">
+              <h3>Temukan Saya Di Sini</h3>
+
+              <div class="social-links-list">
+                <a
+                  href="https://www.instagram.com/dzaky_saputrra?utm_source=ig_web_button_share_sheet&exln=ZDNlZDc0MzIxNw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-item"
+                >
+                  <div class="social-icon ig">
+                    <i class="fa-brands fa-instagram"></i>
+                  </div>
+                  <div>
+                    <strong>Instagram</strong>
+                    <span>@dzaky_saputrra</span>
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com/Dzakyzz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-item"
+                >
+                  <div class="social-icon gh">
+                    <i class="fa-brands fa-github"></i>
+                  </div>
+                  <div>
+                    <strong>GitHub</strong>
+                    <span>@Dzakyzz</span>
+                  </div>
+                </a>
+
+                <a
+                  href="https://wa.me/62882005903527"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-item"
+                >
+                  <div class="social-icon wa">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </div>
+                  <div>
+                    <strong>WhatsApp</strong>
+                    <span>0882005903527</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>&copy; 2026 Made by Dzaky.</p>
+      </div>
+    </footer>
+
+    <!-- FLOATING SPOTIFY MUSIC WIDGET: DAYBREAK'S BELL - L'Arc-en-Ciel (Gundam 00 OP) -->
+    <div class="floating-music-widget spotify-mode" id="musicWidget">
+      <div class="widget-header-bar">
+        <div class="widget-header-title">
+          <i class="fa-brands fa-spotify" style="color: #1ed760"></i>
+          <span>DAYBREAK'S BELL • Gundam 00 OP</span>
+        </div>
+        <button
+          class="widget-minimize-btn"
+          id="minimizeMusicBtn"
+          title="Sembunyikan / Tampilkan"
+        >
+          <i class="fa-solid fa-chevron-down" id="minimizeIcon"></i>
+        </button>
+      </div>
+      <div class="spotify-embed-wrapper" id="spotifyEmbedWrapper">
+        <iframe
+          id="spotifyIframe"
+          style="border-radius: 12px; border: none; display: block"
+          src="https://open.spotify.com/embed/track/18U7hHePLhiHdWrfuBVPJ9?utm_source=generator&theme=0"
+          width="100%"
+          height="80"
+          frameborder="0"
+          allowfullscreen=""
+          allow="
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            fullscreen;
+            picture-in-picture;
+          "
+          loading="lazy"
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION POPUP -->
+    <div class="toast-box" id="toastBox"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>
