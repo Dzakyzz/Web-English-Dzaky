@@ -218,13 +218,13 @@ function renderReviews() {
                     <div class="review-pros-cons">
                         <div class="review-pros-box">
                             <h4 class="pros-cons-title text-success">
-                                <i class="fa-solid fa-thumbs-up"></i> Kelebihan
+                                <i class="fa-solid fa-thumbs-up"></i> Strenght
                             </h4>
                             <ul class="pros-cons-list">${prosList}</ul>
                         </div>
                         <div class="review-cons-box">
                             <h4 class="pros-cons-title text-danger">
-                                <i class="fa-solid fa-thumbs-down"></i> Kekurangan
+                                <i class="fa-solid fa-thumbs-down"></i> Weekness
                             </h4>
                             <ul class="pros-cons-list">${consList}</ul>
                         </div>
