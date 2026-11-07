@@ -403,7 +403,7 @@
 
     <!-- FLOATING SPOTIFY MUSIC WIDGET: DAYBREAK'S BELL - L'Arc-en-Ciel (Gundam 00 OP) -->
     <div class="floating-music-widget spotify-mode" id="musicWidget">
-      <div class="widget-header-bar">
+      <div class="widget-header-bar" id="widgetHeaderBar">
         <div class="widget-header-title">
           <i class="fa-brands fa-spotify" style="color: #1ed760"></i>
           <span>DAYBREAK'S BELL • Gundam 00 OP</span>
@@ -411,9 +411,9 @@
         <button
           class="widget-minimize-btn"
           id="minimizeMusicBtn"
-          title="Sembunyikan / Tampilkan"
+          aria-label="Sembunyikan / Tampilkan pemutar musik"
         >
-          <i class="fa-solid fa-chevron-down" id="minimizeIcon"></i>
+          <i class="fa-solid fa-chevron-up" id="minimizeIcon"></i>
         </button>
       </div>
       <div class="spotify-embed-wrapper" id="spotifyEmbedWrapper">
@@ -423,16 +423,7 @@
           src="https://open.spotify.com/embed/track/18U7hHePLhiHdWrfuBVPJ9?utm_source=generator&theme=0"
           width="100%"
           height="80"
-          frameborder="0"
-          allowfullscreen=""
-          allow="
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            fullscreen;
-            picture-in-picture;
-          "
-          loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         >
         </iframe>
       </div>

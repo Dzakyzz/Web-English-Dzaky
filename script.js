@@ -94,17 +94,6 @@ sidebarLinks.forEach((link) => {
   link.addEventListener("click", closeSidebar);
 });
 
-// Sidebar music button
-if (sidebarMusicBtn) {
-  sidebarMusicBtn.addEventListener("click", () => {
-    closeSidebar();
-    if (musicWidget) {
-      musicWidget.classList.toggle("expanded");
-      showToast("Spotify: DAYBREAK'S BELL - L'Arc~en~Ciel");
-    }
-  });
-}
-
 // Active link highlighting for both desktop navbar & mobile sidebar
 window.addEventListener("scroll", () => {
   if (window.scrollY > 80) {
@@ -138,43 +127,75 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Mobile music widget: tap header bar to expand/collapse
-if (musicWidget) {
-  const headerBar = musicWidget.querySelector(".widget-header-bar");
-  if (headerBar) {
-    headerBar.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        // Don't trigger if clicking minimize btn itself
-        if (e.target.closest(".widget-minimize-btn")) return;
-        musicWidget.classList.toggle("expanded");
-      }
-    });
-  }
-}
-
 // ==========================================
 // 4. SPOTIFY CONTROLS & EVENT LISTENERS
 // ==========================================
 
-// Spotify Player Widget & Minimize Toggle
-if (minimizeMusicBtn && musicWidget) {
-  minimizeMusicBtn.addEventListener("click", () => {
-    musicWidget.classList.toggle("minimized");
-    if (musicWidget.classList.contains("minimized")) {
-      minimizeIcon.classList.replace("fa-chevron-down", "fa-chevron-up");
-    } else {
-      minimizeIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+function setMusicWidgetState(isOpen) {
+  if (!musicWidget) return;
+  if (isOpen) {
+    musicWidget.classList.add("expanded");
+    musicWidget.classList.remove("minimized");
+    if (minimizeIcon) {
+      minimizeIcon.classList.remove("fa-chevron-up");
+      minimizeIcon.classList.add("fa-chevron-down");
     }
+  } else {
+    musicWidget.classList.remove("expanded");
+    musicWidget.classList.add("minimized");
+    if (minimizeIcon) {
+      minimizeIcon.classList.remove("fa-chevron-down");
+      minimizeIcon.classList.add("fa-chevron-up");
+    }
+  }
+}
+
+function toggleMusicWidget() {
+  if (!musicWidget) return;
+  const isCurrentlyOpen =
+    musicWidget.classList.contains("expanded") ||
+    (!musicWidget.classList.contains("minimized") && window.innerWidth > 768);
+  setMusicWidgetState(!isCurrentlyOpen);
+}
+
+// Click anywhere on header bar to toggle
+const widgetHeaderBar = document.getElementById("widgetHeaderBar");
+if (widgetHeaderBar) {
+  widgetHeaderBar.addEventListener("click", () => {
+    toggleMusicWidget();
   });
 }
 
-if (navbarAudioToggle && musicWidget) {
+// Minimize button click
+if (minimizeMusicBtn) {
+  minimizeMusicBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMusicWidget();
+  });
+}
+
+// Navbar audio toggle button
+if (navbarAudioToggle) {
   navbarAudioToggle.addEventListener("click", () => {
-    musicWidget.classList.remove("minimized");
-    if (minimizeIcon)
-      minimizeIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+    setMusicWidgetState(true);
     showToast("Spotify: DAYBREAK'S BELL - L'Arc~en~Ciel (Gundam 00 OP)");
   });
+}
+
+// Sidebar music button
+if (sidebarMusicBtn) {
+  sidebarMusicBtn.addEventListener("click", () => {
+    closeSidebar();
+    setMusicWidgetState(true);
+    showToast("Spotify: DAYBREAK'S BELL - L'Arc~en~Ciel");
+  });
+}
+
+// Initial state: desktop starts open, mobile starts minimized
+if (window.innerWidth <= 768) {
+  setMusicWidgetState(false);
+} else {
+  setMusicWidgetState(true);
 }
 
 // ==========================================
