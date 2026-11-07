@@ -910,6 +910,8 @@ button {
     flex-shrink: 0;
 }
 .social-icon.ig { background: #fdf2f8; color: #db2777; }
+.social-icon.tt,
+.social-icon.tiktok { background: #ffffff; color: #000000; }
 .social-icon.gh { background: #f3f4f6; color: #1f2937; }
 .social-icon.wa { background: #dcfce7; color: #16a34a; }
 
